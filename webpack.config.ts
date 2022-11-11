@@ -7,7 +7,7 @@ import { BuildPaths, IEnv } from "./config/build/types/config";
 export default (env:IEnv) => {
 
 const paths: BuildPaths = {
-  entry: path.resolve(__dirname, "src", "index.ts"),
+  entry: path.resolve(__dirname, "src", "index.tsx"),
   build: path.resolve(__dirname, "build"),
   html: path.resolve(__dirname, "public", "index.html"),
 };
@@ -21,5 +21,7 @@ const config: webpack.Configuration = buildWebpackConfig({
   isDev,
   port: PORT  
 });
+  console.log(isDev);
+  
   return config
 };

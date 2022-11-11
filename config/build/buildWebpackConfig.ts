@@ -14,11 +14,11 @@ export const buildWebpackConfig = (
     mode: mode,
     entry: paths.entry,
     module: {
-      rules: buildLoaders(),
+      rules: buildLoaders(options),
     },
     resolve: buildResolve(),
     output: {
-      filename: "bundle.js",
+      filename: "[name].[contenthash].js",
       path: paths.build,
       clean: true,
     },
