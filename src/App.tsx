@@ -1,6 +1,7 @@
 import React, { Suspense, useState } from 'react'
 import { Link } from 'react-router-dom';
 import { Route, Routes } from 'react-router-dom';
+import { classNames } from './helpers/classnames';
 import About from './pages/about/About';
 import { AboutAsync } from './pages/about/About.async';
 import Main from './pages/main/Main';
@@ -17,7 +18,7 @@ const App = () => {
 const {theme, toggleTheme} = useTheme()
 
 return (
-  <div className={`app ${theme}`}>
+  <div className={classNames('app', {hovered:true}, [theme,'her2',])}>
       <button onClick={toggleTheme}>Toggle</button>
      <Link to="/"> Main </Link> 
      <Link to="/about"> about </Link> 
