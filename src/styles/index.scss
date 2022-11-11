@@ -1,0 +1,15 @@
+@import "reset.scss";
+@import "variables/global.scss";
+@import "theme/dark.scss";
+@import "theme/light.scss";
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
+
+.app {
+  font: var(--font-m);
+  font-family: var(--font-family-main);
+
+  background: var(--bg-color);
+  color: var(--primary-color);
+
+  min-height: 100vh;
+}
