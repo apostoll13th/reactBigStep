@@ -8,8 +8,6 @@
 
 /build
 
-git branch -M main
-git push -u origin main misc
 .DS_Store
 .env.local
 .env.development.local
