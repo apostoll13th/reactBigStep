@@ -13,15 +13,15 @@ const App = () => {
   const { theme, toggleTheme } = useTheme();
   return (
     <Suspense fallback={<div>Loading...</div>}>
-    <div className={classNames("app", {}, [theme])}>
-      <Navbar />
-      <div className="content-page">
-        <Sidebar />
-        <AppRouter />
+      <div className={classNames("app", {}, [theme])}>
+        <Navbar />
+        <div className="content-page">
+          <Sidebar />
+          <AppRouter />
+        </div>
       </div>
-    </div>
     </Suspense>
-  )
+  );
 };
 
 export default App;

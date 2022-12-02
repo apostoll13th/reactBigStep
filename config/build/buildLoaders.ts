@@ -41,6 +41,21 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
     test: /\.svg$/,
     use: ["@svgr/webpack"],
   };
+  const babelLoader = {
+    test: /\.(js|jsx|tsx)$/,
+    exclude: /(node_modules|bower_components)/,
+    use: {
+      loader: 'babel-loader',
+      options: {
+        presets: ['@babel/preset-env']
+      }
+    }
+  }
 
-  return [fileLoader, svgLoader, typescriptLoader, cssLoader];
+  return [
+    fileLoader, 
+    svgLoader, 
+    babelLoader,
+    typescriptLoader,
+    cssLoader];
 }

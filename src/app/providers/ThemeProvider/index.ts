@@ -4,7 +4,7 @@ import {useTheme} from "./lib/useTheme";
 
 
 export {
-    ThemeProvider,
-    useTheme,
-    Theme
+  ThemeProvider,
+  useTheme,
+  Theme
 };
