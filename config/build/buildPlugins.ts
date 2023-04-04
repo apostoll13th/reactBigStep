@@ -22,14 +22,15 @@ export function buildPlugins({
     new webpack.DefinePlugin({
       __IS_DEV__: JSON.stringify(isDev),
     }),
-    new BundleAnalyzerPlugin({
-      openAnalyzer: false
-    })
+
   ];
 
   if (isDev) {
     plugin.push(new ReactRefreshWebpackPlugin());
     plugin.push(new webpack.HotModuleReplacementPlugin());
+    plugin.push(new BundleAnalyzerPlugin({
+      openAnalyzer: false
+    }))
   }
 
   return plugin;
