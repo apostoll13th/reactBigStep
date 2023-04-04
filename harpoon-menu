@@ -1,0 +1,2 @@
+src/app/router/AppRouter.tsx
+src/app/providers/ThemeProvider/ui/ThemeProvider.tsx
