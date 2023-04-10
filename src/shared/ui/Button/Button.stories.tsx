@@ -1,7 +1,7 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import {Button, ThemeButton} from './Button';
+import {Button, ButtonTheme} from './Button';
 import {Theme} from "app/providers/ThemeProvider";
 import ThemeDecorator from "shared/config/storybookDecorators/ThemeDecorators/ThemeDecorators";
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
@@ -25,13 +25,13 @@ Primary.args = {
 
 export const Clear = Template.bind({})
 Clear.args = {
-  theme: ThemeButton.CLEAR,
+  theme: ButtonTheme.CLEAR,
   children: "Text"
 }
 
 export const Ouline = Template.bind({})
 Ouline.args = {
-  theme: ThemeButton.OUTLINE,
+  theme: ButtonTheme.OUTLINE,
   children: "Text"
 }
 
@@ -39,6 +39,18 @@ Ouline.args = {
 export const OutlineDark = Template.bind({});
 OutlineDark.args = {
   children: 'Text',
-  theme: ThemeButton.OUTLINE,
+  theme: ButtonTheme.OUTLINE,
 };
 OutlineDark.decorators = [ThemeDecorator(Theme.DARK)];
+
+
+export const Background = Template.bind({})
+Background.args = {
+  theme: ButtonTheme.BACKGROUND,
+  children: "Text"
+}
+export const BackgroundInverted = Template.bind({})
+BackgroundInverted.args = {
+  theme: ButtonTheme.BACKGROUND_INVERTED,
+  children: "Text"
+}
