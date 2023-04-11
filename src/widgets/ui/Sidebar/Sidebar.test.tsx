@@ -1,22 +1,20 @@
 import {fireEvent, render, screen} from "@testing-library/react";
-import { Button } from "shared/ui/Button/Button";
 import '@testing-library/jest-dom'
 import { Sidebar } from "./Sidebar";
-import {useContext} from "react";
-import {renderWithTranslation} from "shared/lib/i18test/renderWithTranslation";
+import {componentRender} from "shared/lib/test/ComponentWithRender";
 
 
 describe("sidebar", () => {
   test("render", () => {
-    render(<Sidebar></Sidebar>);
-    expect(screen.getByTestId("sidebar")).toBeInTheDocument()
+    componentRender(<Sidebar></Sidebar>);
+    expect(screen.getByTestId("Sidebar")).toBeInTheDocument()
   });
   test('test toggle', () => {
-    renderWithTranslation(<Sidebar />);
+    componentRender(<Sidebar />);
     const toggleBtn = screen.getByTestId('sidebar-toggle');
-    expect(screen.getByTestId('sidebar')).toBeInTheDocument();
+    expect(screen.getByTestId('Sidebar')).toBeInTheDocument();
     fireEvent.click(toggleBtn);
-    expect(screen.getByTestId('sidebar')).toHaveClass('collapsed');
+    expect(screen.getByTestId('Sidebar')).toHaveClass('collapsed');
   });
 });
 
